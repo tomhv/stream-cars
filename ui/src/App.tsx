@@ -4,31 +4,36 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="container mt-8 mx-auto">
+      <h1 className="text-6xl text-purple">Stream Cars</h1>
+      <div className="my-4">
+        <table className="w-full text-left border-separate border-spacing-1">
+          <thead>
+            <tr>
+              <th className="p-4 bg-aqua">Driver</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="p-4 bg-light-aqua">Sam</td>
+            </tr>
+            <tr>
+              <td className="p-4 bg-light-aqua">Nix</td>
+            </tr>
+            <tr>
+              <td className="p-4 bg-light-aqua">Ben</td>
+            </tr>
+            <tr>
+              <td className="p-4 bg-light-aqua">Ann</td>
+            </tr>
+            <tr>
+              <td className="p-4 bg-light-aqua">Jen</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
