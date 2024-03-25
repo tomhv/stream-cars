@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  ui:
+    build:
+      context: ui
+      target: dev
+    volumes:
+      - ./ui:/srv/app
+    ports:
+      - 8037:8080
