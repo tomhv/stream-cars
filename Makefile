@@ -22,6 +22,10 @@ restart: stop start
 ps:
 	docker compose ps
 
+## Show container logs
+logs:
+	docker compose logs
+
 # Used to provide a nice help menu listing all the available targets
 ## Help menu
 help:

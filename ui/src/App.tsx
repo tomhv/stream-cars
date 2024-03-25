@@ -1,34 +1,24 @@
+import { useState, useEffect } from 'react';
 import Racer from './components/Racer'
 import './App.css'
 
 function App() {
-  const racers = [
-    {
-      id: "tom",
-      driver: "Tom",
-      progress: "5",
-    },
-    {
-      id: "nic",
-      driver: "Nic",
-      progress: "2",
-    },
-    {
-      id: "dan",
-      driver: "Dan",
-      progress: "3",
-    },
-    {
-      id: "sam",
-      driver: "Sam",
-      progress: "4",
-    },
-    {
-      id: "vic",
-      driver: "Vic",
-      progress: "7",
-    },
-  ];
+  const [racers, setRacers] = useState([]);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      fetch('http://localhost:8038/racers')
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          console.log(data);
+          setRacers(data);
+        });
+    }, 500)
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <div className="container mt-8 mx-auto">

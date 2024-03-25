@@ -9,3 +9,13 @@ services:
       - ./ui:/srv/app
     ports:
       - 8037:8080
+
+  api:
+    build:
+      context: api
+      target: dev
+    command: go run cmd/api/main.go
+    volumes:
+      - ./api:/usr/src/app
+    ports:
+      - 8038:8038
